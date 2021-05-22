@@ -1,0 +1,46 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<!-- <br>
+<a href="{% url 'blog:all_blogs' %}"> Blogs </a> -->
+<div class="container"> 
+    <br>
+    <div class="text-center">
+        <img src="{% static 'portfolio/Portfolio_home_pic.jpg' %}" class="rounded"> 
+        <br>
+
+        <p class="fs-4" style="font-family:KoHo"> What's up people.. This is Naresh Kumar. I am Web developer by hobby and Application developer by profession. <br>
+            Welcome to my awesome portfolio page created and powered by <b>Django!!!</b> Feel free to skim through my projects and blog. </p> 
+    </div>
+    <br>
+    <hr style="height: 4px;">
+    <br><br>
+</div>
+
+<div class="container px-4">
+    <div class="row row-cols-3">
+        {% for project in projects %}
+        <div class="col">     
+            <div class="card text-dark border-dark h-100">
+                {% if project.url %}
+                    <a href="{{ project.url }}" target="_blank">
+                        <img src="{{ project.image.url }}" class="card-img-top" width=350 height=250>
+                    </a>
+                {% else %}
+                    <img src="{{ project.image.url }}" class="card-img-top" width=350 height=250>
+                {% endif %}
+                
+                <div class="card-body">
+                    <h5 class="card-title"> {{ project.title }} </h5>
+                    <p class="card-text"> {{ project.description }} </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<br>
+
+{% endblock %}

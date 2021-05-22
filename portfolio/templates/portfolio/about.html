@@ -1,0 +1,60 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+{% load static %}
+<style>    
+    .img-block {
+        width: 50%; 
+        height: auto;
+        margin-left: 15%;
+    }
+
+    .text-block {
+        position: absolute;
+        border: 2px solid black;
+        bottom: 25%;
+        right: 15%;
+        background-color: white;
+        color: gray;
+        padding-left: 20px;
+        padding-right: 1%;
+        width: 35%;
+        font-size: x-large;
+        font-family: Newsreader;
+    }
+
+</style>
+<h1 style="text-align: center;">About</h1>
+<br>
+<div class="container" style="position: relative;">
+    <img src="{% static 'portfolio/about.JPG' %}" class="img-block"> 
+    <div class="text-block">
+        <h4 style="padding-top:2%">MEET NARESH</h4>
+        <p>Naresh was born and brought up in Chennai, India. He lives in Chennai.<br>
+           He began his professional career working as an Application Developer at <br> 
+           IBM India Pvt Ltd. Naresh loves dogs and is fond of puppies. On May 2021 <br>
+           he created this website as a learning of Django 3.</p>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <div class="row row-cols-2 text-center">
+        <div class="col">
+            <a href="https://www.linkedin.com/in/naresh-kumar-b2259a14b/" target="_blank">
+                <img src="{% static 'portfolio/linkedIn.png' %}" style="width: 10%; height: auto;">
+            </a>
+            <br> LinkedIn
+        </div>
+        <div class="col">
+            <a href="https://twitter.com/nareshwhity" target="_blank">
+                <img src="{% static 'portfolio/twitter.png' %}" style="width: 10%; height: auto;">
+            </a>
+            <br> Twitter
+        </div>
+    </div>
+</div>
+<br>
+
+
+{% endblock %}
+

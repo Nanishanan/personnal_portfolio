@@ -1,0 +1,22 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1 style="text-align: center; font-family: Playfair Display;"> Welcome to my Blog Page </h1>
+    <br>
+    <!-- <h4 style="text-align: right;"> Blog Count: {{ Blogs.count }} blog{{ Blogs.count|pluralize }} </h4> -->
+    <h4 style="text-align: right;"> Blog Count: {{ Blogs.count }} </h4>
+
+    {% for blog in Blogs %}
+
+    <h1> <a href="{% url 'blog:details' blog.id %}" style="font-family: Playfair Display;">  {{ blog.title }} </a> </h1>
+    <h6> {{ blog.date|date:'N d Y'|upper }} </h6>
+    <p style="font-family: Nanum Myeongjo; font-size: xx-large;"> {{ blog.description|truncatechars:100 }} </p>
+    <br>
+
+    {% endfor %}
+</div>
+<!-- <a href="{% url 'home' %}"> Home </a> -->
+
+{% endblock %}
